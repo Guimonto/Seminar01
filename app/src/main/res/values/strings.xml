@@ -7,4 +7,5 @@
     <string name="onclick_layout">onClickListener from layout</string>
     <string name="button">Button 1 clicked!</string>
     <string name="button2">Button 2 clicked!</string>
+    <string name="tv_second_activity">Welcome to the second activity!</string>
 </resources>

@@ -1,5 +1,6 @@
 package labs.sem01.seminar01;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         tvs.setText(R.string.dynamic_string);
 
         Button button = findViewById(R.id.button);
-        button.setText("onClickListener by code");
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setText("onClickListener by code and Explicit Intent");
+        /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, R.string.button, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
         Button button1 = findViewById(R.id.button2);
         button1.setText("onClickListener from layout");
@@ -84,4 +85,10 @@ public class MainActivity extends AppCompatActivity {
     public void displayMessage(View v){
         Toast.makeText(MainActivity.this, R.string.button2, Toast.LENGTH_LONG).show();
     }
+
+    public void launchExplicitIntent(View v){
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
 }
