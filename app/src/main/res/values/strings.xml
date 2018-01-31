@@ -3,4 +3,8 @@
     <string name="welcome">Welcome to SDM</string>
     <string name="dynamic_int">Dynamic text assigned by code (int)</string>
     <string name="dynamic_string">Dynamic text assigned by code (String)</string>
+    <string name="onclick_code">onClickListener by code</string>
+    <string name="onclick_layout">onClickListener from layout</string>
+    <string name="button">Button 1 clicked!</string>
+    <string name="button2">Button 2 clicked!</string>
 </resources>

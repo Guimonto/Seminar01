@@ -3,7 +3,10 @@ package labs.sem01.seminar01;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,5 +67,21 @@ public class MainActivity extends AppCompatActivity {
         TextView tvs = (TextView) findViewById(R.id.tvDynamicTextString);
         tvs.setText(R.string.dynamic_string);
 
+        Button button = findViewById(R.id.button);
+        button.setText("onClickListener by code");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, R.string.button, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Button button1 = findViewById(R.id.button2);
+        button1.setText("onClickListener from layout");
+
+    }
+
+    public void displayMessage(View v){
+        Toast.makeText(MainActivity.this, R.string.button2, Toast.LENGTH_LONG).show();
     }
 }
