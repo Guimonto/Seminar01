@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Lifecycle";
+    private static final int INTENT_CODE = 1;
 
     @Override
     protected void onStart() {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         Button button1 = findViewById(R.id.button2);
-        button1.setText("onClickListener from layout");
+        button1.setText("onClickListener from layout and Explicit Intent with extra information");
 
     }
 
@@ -91,4 +92,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchExplicitIntentButton2(View v) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra("nom", "David");
+        startActivity(intent);
+    }
+
+    @Override
+    protected  void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case INTENT_CODE:
+                Toast.makeText(this, data.getStringExtra("result"), Toast.LENGTH_LONG).show();
+                break;
+        }
+    }
 }
