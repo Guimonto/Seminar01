@@ -12,12 +12,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+
         if (getIntent().getStringExtra("nom") == null) {
             TextView tv_second = findViewById(R.id.tvMessage);
             tv_second.setText("Welcome to the second activity!");
-        }
-
-        else {
+        } else {
             TextView tv_s2 = findViewById(R.id.tvMessage);
             tv_s2.setText("Welcome to the second activity, " + getIntent().getStringExtra("nom"));
         }
@@ -25,7 +24,6 @@ public class SecondActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
         Intent intent = new Intent();
         intent.putExtra("result", "Come back soon!");
         setResult(RESULT_OK, intent);

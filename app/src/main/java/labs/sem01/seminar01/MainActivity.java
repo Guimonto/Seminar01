@@ -1,6 +1,7 @@
 package labs.sem01.seminar01;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.button2);
         button1.setText("onClickListener from layout and Explicit Intent with extra information");
 
+        Button button3 = findViewById(R.id.button3);
+        button3.setText("Implicit Intent");
+
     }
 
     public void displayMessage(View v){
@@ -98,12 +102,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchImplicitIntent(View v){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https:www.upv.es"));
+
+        Intent chooser = Intent.createChooser(intent, getResources().getString(R.string.button3));
+
+        if (intent.resolveActivity(getPackageManager()) != null){
+            intent.setAction(Intent.ACTION_CHOOSER);
+            startActivity(chooser);
+        }
+    }
+
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case INTENT_CODE:
-                Toast.makeText(this, data.getStringExtra("result"), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, data.getStringExtra("result"), Toast.LENGTH_LONG).show();
                 break;
         }
     }
