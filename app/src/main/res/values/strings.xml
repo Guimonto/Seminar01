@@ -10,4 +10,5 @@
     <string name="tv_second_activity">Welcome to the second activity!</string>
     <string name="welcome2">Welcome to the second activity, %1$s</string>
     <string name="button3">Implicit intent</string>
+    <string name="result">Come back soon!</string>
 </resources>

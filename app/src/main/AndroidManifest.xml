@@ -18,9 +18,14 @@
         </activity>
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="http" />
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.APP_BROWSER"></category>
+                <data android:scheme="http"></data>
             </intent-filter>
         </activity>
     </application>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+//    public static final int
     private static final String TAG = "Lifecycle";
     private static final int INTENT_CODE = 1;
 
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void launchExplicitIntentButton2(View v) {
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("nom", "David");
-        startActivity(intent);
+        startActivityForResult(intent, INTENT_CODE);
     }
 
     public void launchImplicitIntent(View v){
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https:www.upv.es"));
 
-        Intent chooser = Intent.createChooser(intent, getResources().getString(R.string.button3));
+        Intent chooser = Intent.createChooser(intent, "View UPV's web page");
 
         if (intent.resolveActivity(getPackageManager()) != null){
             intent.setAction(Intent.ACTION_CHOOSER);
